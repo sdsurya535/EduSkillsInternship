@@ -1,0 +1,76 @@
+/* In your Tailwind CSS file or in a custom CSS file */
+
+/* List Styles */
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list li {
+    position: relative;
+    padding-left: 1.5rem; /* Adjust as needed */
+    margin-bottom: 1rem; /* Adjust as needed */
+    overflow: hidden; /* Ensure gradient animation doesn't overflow */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Gradient Overlay */
+.list li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start from outside the left edge */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, red, transparent); /* Start from left to right */
+    transition: left 0.3s; /* Smooth transition for left position */
+    z-index: 1;
+}
+
+/* Personal */
+.list li.personal:after {
+    @apply bg-gradient-to-r from-green-400 to-blue-500;
+}
+
+.list li.personal {
+    @apply border-l-4 border-green-400;
+}
+
+/* Work */
+.list li.work:after {
+    @apply bg-gradient-to-r from-red-500 to-red-700;
+}
+
+.list li.work {
+    @apply border-l-4 border-red-500;
+}
+
+/* Shopping */
+.list li.shopping:after {
+    @apply bg-gradient-to-r from-purple-500 to-indigo-500;
+}
+
+.list li.shopping {
+    @apply border-l-4 border-purple-500;
+}
+
+/* Cohort */
+.list li.cohort:after {
+    @apply bg-gradient-to-r from-blue-400 to-blue-800;
+}
+
+.list li.cohort {
+    @apply border-l-4 border-blue-500;
+}
+
+/* Hover effect */
+.list li:hover::before {
+    left: 0; /* Move the gradient to cover the background from left to right */
+    transition: left 0.3s; /* Smooth transition for left position */
+}
+
+/* Hover effect for background color */
+.list li:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the background color as needed */
+}

@@ -1,0 +1,56 @@
+li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+
+.reg:hover::after {
+  width: 100%;
+}
+
+.cer:hover::after {
+  width: 100%;
+}
+
+.crs:hover::after {
+  width: 100%;
+}
+
+.coh:hover::after {
+  width: 100%;
+}
+
+.coho li h5,
+span {
+  position: relative;
+  z-index: 9;
+
+}
+
+.reg::after {
+  background: linear-gradient(102deg, #00cc88 0%, #1096b7 100%);
+}
+
+.reg::after {
+  background: linear-gradient(102deg, #00cc88 0%, #1096b7 100%);
+}
+
+.crs::after {
+  background: linear-gradient(102deg, #29a1e1 0%, #063c92 100%);
+}
+.cer::after {
+  background: linear-gradient(102deg, #cc00c5 0%, #1061b7 100%);
+}
+.coh::after {
+  background: linear-gradient(102deg, #fa5437 0%, #ed4618 100%);
+}
